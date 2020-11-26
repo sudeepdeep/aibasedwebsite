@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for, redirect, request, flash, session
+from flask import Flask, render_template,url_for, redirect, flash, session
 import speech_recognition as sr
 import os
 import face_recognition
@@ -14,7 +14,6 @@ import ast
 from pyzbar.pyzbar import decode
 import pyttsx3
 import pickle as pkl
-import pythoncom
 from translate import Translator
 
 
@@ -162,7 +161,6 @@ def tts():
     if 'loggedin'  in session:
         if request.method == "POST" and 'nm' in request.form:
             mytext = str(request.form['nm'])
-            pythoncom.CoInitialize()
             engine = pyttsx3.init()
             engine.say(mytext)
             engine.runAndWait()
