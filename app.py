@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for, redirect, flash, session
+from flask import Flask, render_template,url_for, redirect,request, flash, session
 import speech_recognition as sr
 import os
 import face_recognition
