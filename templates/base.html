@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>{% block title%}{% endblock %}</title>
+  <style type="text/css">
+    nav{
+      background-color: #007BFF;
+      height: 100px;
+    }
+    nav a{
+      color:white;
+      font-size: 18px;
+    }
+    nav a:hover{
+      color:white;
+      text-decoration: underline;
+    }
+    .dropdown-menu{
+      background-color: #58CCED;
+    }
+    .dropdown-menu a:hover{
+      background-color: white;
+      color:#007BFF;
+    }
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="/" style="color:yellow;font-size: 20px;"><img src = " {{url_for('static',filename = 'images/logo1.png')}}" height="350px;" width="250px;" style="margin-top: 110px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Home</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/">Home</a>
+          <a class="dropdown-item" href="/profile">My Profile</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Paid Features $
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/ipl">IPL Predictons</a>
+          <a class="dropdown-item" href="/ipl">Sports Predictions</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/newfeatures">See Whats New <img src="{{ url_for('static', filename = 'images/newgif.gif')}}" width="40px" height="40px;"></a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="paidfeatures">Pricing Details</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Free Features
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/tts">Text to Speech</a>
+          <a class="dropdown-item" href="/stt">Speech to Text</a>
+          <a class="dropdown-item" href="/selectfile">Face Recoginition</a>
+          <a class="dropdown-item" href="languagetranslator">Language Converter</a>
+          <a class="dropdown-item" href="languagetranslator">Currency Converter</a>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-item">
+      <a class="nav-link" href="/{{log}}" style="color:yellow">{{log}}</a>
+    </span>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

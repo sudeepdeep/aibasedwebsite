@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{%block title %}Login page{% endblock %}
+
+{%block content%}
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+	center{
+
+	}
+	
+	form{
+	}
+	input[name = email] {
+	
+		
+	}
+	input[type = password] {
+	
+	}
+	input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type = submit]{
+	background-color: #0073B7;
+	color:white;
+	height: 50px;
+	width: 100px;
+	
+}
+
+p a{
+	color:#0073B7;
+
+}
+a:hover{
+	color:#0073B7;
+	text-decoration: none;
+}
+h4 a{
+	color:#0073B7;
+}
+center{
+	margin-top: 80px;
+}
+</style>
+<center>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<h4>{{msg}}</h4>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+ <form action="/login" method="POST">
+ 	<label for = "email" style=" color:#0073B7; margin-left:-230px;"><b>Email</b></label>
+  <p style="color:white;font-size: 20px;"><input type="email" name="email" placeholder="Enter the email"></p>
+  <label for = "password" style=" color: #0073B7 ; margin-left:-200px;"><b>Password</b></label>
+
+  <p style="color:white;font-size: 20px; "><input type="password" name = "password" placeholder="Enter your password"></p>
+  <p><input type="submit" value="submit"></p>
+</form>
+
+<p>Didn't have an account? <a href = "/register ">click here to register</a></p>
+	<p style="color:black;">-----------------------------------------OR-----------------------------------------------</p>
+	<h4>Login with <a href = "facelogin" style="">Face Recognition</a></h4>
+	<p style="color:black;">-----------------------------------------OR-----------------------------------------------</p>
+	<h4>Login with <a href = "/barcodelogin">Barcode Login</a></h4>
+</center>
+
+{% endblock %}

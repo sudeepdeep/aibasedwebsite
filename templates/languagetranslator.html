@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<center>
+<div class="w-50 mt-5">
+    <form action="{{url_for('languagetranslator')}}" method="POST">
+
+        <div class='row my-5'>
+        
+        <div class="form-group col">
+          <label>Source</label>
+          <select class="form-control" id="exampleFormControlSelect1" name='src' required>
+            <option value="af">afrikaans</option>
+            <option value="sq">albanian</option>
+            <option value="ar">arabic</option>
+            <option value="bn">bengali</option>
+            <option value="zh-tw">chinese</option>
+            <option value="nl">dutch</option>
+            <option value="en">english</option>
+            <option value="el">greek</option>
+            <option value="gu">gujarati</option>
+            <option value="he">hebrew</option>
+            <option value="hi">hindi</option>
+            <option value="ja">japanese</option>
+            <option value="ne">nepali</option>
+            <option value="pa">punjabi</option>
+            <option value="Delhi Capitals">russian</option>
+            <option value="ta">tamil</option>
+            <option value="te">telugu</option>
+            <option value="ur">urdu</option>
+          </select>
+        </div>
+        
+        <div class="form-group col">
+            <label >Destination</label>
+            <select class="form-control" id="exampleFormControlSelect1" name='dest' required>
+            <option value="af">afrikaans</option>
+            <option value="sq">albanian</option>
+            <option value="ar">arabic</option>
+            <option value="bn">bengali</option>
+            <option value="zh-tw">chinese</option>
+            <option value="nl">dutch</option>
+            <option value="en">english</option>
+            <option value="el">greek</option>
+            <option value="gu">gujarati</option>
+            <option value="he">hebrew</option>
+            <option value="hi">hindi</option>
+            <option value="ja">japanese</option>
+            <option value="ne">nepali</option>
+            <option value="pa">punjabi</option>
+            <option value="Delhi Capitals">russian</option>
+            <option value="ta">tamil</option>
+            <option value="te">telugu</option>
+            <option value="ur">urdu</option>
+          </select>
+          </div>
+        </div>
+        <p><input type="text" name="lang" placeholder="Enter the Text from Source language" ></p>
+        <p><input type="submit" name='btn' class='btn btn-primary btn-lg' value='Translate'></p>
+</form></div></center>
+{% endblock %}

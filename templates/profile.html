@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+	center{
+		margin-top:30px;
+	}
+	.boxed {
+		border: 5px solid red;
+		width:1000px;
+		margin-top: 20px;
+	}
+</style>
+
+<table align="center" style="width: 70%; margin-top: 20px; color: black;">
+	<tr>
+		<td colspan = '2' align="center" style="font-size: 20px;" >Profile Page</td>
+	</tr>
+	<tr align="center">
+		<td>Name</td>
+		<td style="font-size: 20px; color:#0073B7;">{{account['name']}}</td>
+		{% with myvar = qrname %}
+		<td><img src="{{ user_image }}"  alt="{{ user_image }}" height="100px;"></td>
+		{% endwith %}
+	</tr>
+	<tr align="center" style="height:50px; ">
+		<td>Email</td>
+		<td style="font-size: 20px; color:#0073B7;">{{account['email']}}</td>
+	</tr>
+	
+	<tr align="center" style="height:50px; ">
+		<td>Paid User</td>
+		<td style="font-size: 20px; color:#0073B7;">NO</td>
+	</tr>
+</table>
+
+<center>
+	<h2 style="color:#0073B7;"><b>Instructions To Use BARCODE</b></h2>
+	<h4 style="color:black;">Firstly Download the Barcode and send that to your frequently used Mobile</h4>
+	<h4 style="color:black;">From the next time you can Login into the website with the help of the Barcode</h4>
+	<div class = 'boxed'>
+	<img src = "{{url_for('static',filename = 'images/error.png')}}" height="100px" width="100px" style="margin-top: 20px;">
+	<h3 style="margin-top: 20px; color:black;">Please DO NOT SHARE YOUR BARCODE with anyone</h3>
+	<h4 style="color:black; margin-bottom: 20px;">They may LOGIN to your account with it</h4></div>
+	<p>
+	</p>
+
+</center>
+
+{% endblock %}

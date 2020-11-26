@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{%block title %}tts page{% endblock %}
+
+{%block content%}
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+
+	form{
+		margin-top: 80px;
+	}
+	input[name = nm]{
+		margin-left:20px; 
+	}
+	
+</style>
+<center>
+<form action = "/tts" method="POST">
+	<label style="margin-left: -110px; font-size: 20px; color:black;">Enter the text </label>
+<p style="color:black;font-size: 20px;"> <input type="text" name="nm" placeholder="Enter the text you want "></p>
+<p><input type="submit" value="submit" style="background-color: #0073B7; color:white; height: 50px; width: 100px;"></p>
+<p></p>
+<h1 style="color:#0073B7;font-size: 50px;"><b>NOTE: </b></h1><h4 style="font-size: 30px; color:black;">Incase of any error go back or refresh the page again!!</h4>
+
+<h4 style="font-size: 30px; color:black;">It takes few seconds to process the word..<br>so be patient while processing the word</h4>
+
+<h2 style="color:black;">Thank you : )</h2>
+</form>
+</center>
+
+{% endblock %}

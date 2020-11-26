@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title%}Face Recognition{%endblock%}
+{% block content %}
+<style type="text/css">
+	body{
+		background-color: cyan;
+	}
+	form{
+		margin-left: 550px;
+		padding-top: 10px;
+	}
+	input[type = text]{
+		margin-top: 30px;
+		margin-right: 10px;
+	}
+	h2{
+		margin-left: 300px;
+
+	}
+	h3{
+		margin-left: 300px;
+
+	}
+</style>
+<form action="/facerecog" method="post" >
+	<p><input type="text" name="path" placeholder="file path with file name.extension"></p>
+	<p><input type="text" name="username" placeholder="enter your name"></p>
+	<p><input type="submit" value="submit"></p>
+</form>
+<p><h3>Copy the path of your image and paste it here with valid extension...!!</h3>
+	<h2>Make sure that you have a working webcam</h2>
+<h2>Ensure that the path must be enclosed in a single or double quoations with forward slashes</h2></p>
+{% endblock %}

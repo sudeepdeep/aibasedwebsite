@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{%block title %}stt page{% endblock %}
+
+{%block content%}
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+	form{
+		margin-top: 80px;
+	}
+	
+</style>
+<center>
+<form action="/stt" method="post">
+<input type="image" src="{{ url_for('static', filename = 'images/bmicc.png')}}" height="250px" width="180px"   alt="MikeLogo" >
+</form>
+<p>-----------------------------------------------------------------</p>
+<h3 style="font-size: 30px;">Please click on the mike to record...<br>
+make sure you are connected to microphone</h3>
+</center>
+{% endblock %}

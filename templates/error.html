@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Error{% endblock %}
+{% block content %}
+<center>
+	<h1 style="margin-top: 50px;">{{data}}</h1>
+	<img src= "{{url_for('static',filename = 'images/meme.jpg')}}" width="500px" height="300px"></center>
+{% endblock %}

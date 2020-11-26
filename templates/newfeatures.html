@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{%block title %}New Features{% endblock %}
+
+{%block content%}
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+	a{
+		color: #0073B7;
+	}
+	a:hover{
+		color:#0073B7;
+	}
+	p{
+		margin-top: 20px;
+		font-size: 30px;
+	}
+</style>
+<center>
+	<img src = "{{url_for('static',filename = 'images/facerecog.jpg')}}" width="1000px;" height="300px;" style="margin-top: 50px;">
+	<p><img src = "{{url_for('static',filename = 'images/newgif.gif')}}" width="100px;" height="100px;">
+		New <a href = "/selectfile">Face Recognition</a> Feature is Available Now
+		<img src = "{{url_for('static',filename = 'images/newgif.gif')}}" width="100px;" height="100px;">
+	</p>
+
+
+</center>
+	
+{% endblock %}

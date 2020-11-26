@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{%block title %}Registration page{% endblock %}
+
+{%block content%}
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+	center{
+		margin-top: 30px;
+	}
+	
+	form{
+		margin-top: 40px;
+	}
+	input[name = username] {
+		margin-left: 110px;
+	}
+	input[name = email] {
+		margin-left: 155px;
+	}
+	input[name = password] {
+		margin-left: 115px;
+	}
+	input[name = repassword]{
+		margin-left: 20px;
+	}
+	
+	
+input[type = submit]{
+	background-color: #0073B7;
+	color:white;
+	margin-left: 40px;
+	height: 50px;
+	width: 100px;
+}
+
+.error {
+    color: red
+}
+a{
+	color:#0073B7;
+}
+a:hover{
+	text-decoration: none;
+	color:#0073B7;
+}
+</style>
+<center>
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+		{% for category, msg in messages %}
+		<h4>{{msg}}</h4>
+		
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<center>
+<form action = "/register" method="post">
+		<p style="color:#0073B7;font-size: 20px;">Username: <input type="text" name="username" placeholder="Enter the username"/></p>
+		<p style="color:#0073B7;font-size: 20px;">Email: <input type="email" name="email" placeholder="Enter the mail"></p>
+		<p style="color:#0073B7;font-size: 20px;">Password: <input type="Password" name="password" placeholder="Enter the Password"></p>
+		<p style="color:#0073B7;font-size: 20px;">Re-Enter Password: <input type="Password" name="repassword" placeholder="Re-Enter the password"></p>
+		<p><input type="submit" value="submit"></p></center>
+</form>
+<p>Already had an account? <a href = "/login" style=" color:#0073B7; margin-left: 10px;">click here to login</a></p>
+------------------------------OR------------------------------
+<h4>Register with <a href = "facerecognize">Face Recognition</a></h4>
+</center>
+
+{% endblock %}
